@@ -18,9 +18,16 @@ blueprint = Blueprint(
 )
 
 
-@blueprint.route("/")
+@blueprint.route("/heipadeg")
 def index():
     """Render a basic view."""
     return render_template(
         "invenio_owncloud/index.html",
+        module_name=_('Invenio-OwnCloud'))
+
+@blueprint.route("/oidc-callback.html")
+def oidc_callback():
+    """Render a basic view."""
+    return render_template(
+        "invenio_owncloud/oidc-callback.html",
         module_name=_('Invenio-OwnCloud'))

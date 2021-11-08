@@ -7,13 +7,19 @@
 
 {%- extends config.OWNCLOUD_BASE_TEMPLATE %}
 
+{% block head %}
+  {{super()}}
+  <script src="https://unpkg.com/vue"></script>
+{% endblock %}
+
 {%- block javascript %}
   {{ super() }}
   {{ webpack['owncloud.js'] }}
 {%- endblock javascript %}
 
 {%- block page_body %}
-TODO: Example template, please remove if you do not need it.
 {{_('Welcome to %(module_name)s', module_name=module_name)}}
+
+<div id="file-picker-wrap"></div>
 {%- endblock %}
 

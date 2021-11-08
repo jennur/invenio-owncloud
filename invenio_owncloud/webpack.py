@@ -25,9 +25,13 @@ bundle = WebpackThemeBundle(
     themes={
         "semantic-ui": dict(
             entry={
-                "owncloud": "./js/owncloud/index.js",
+                "owncloud": "./js/invenio_owncloud/index.js",
             },
             dependencies={
+                "@ownclouders/file-picker": "^0.10.0",
+                "axios": "^0.21.1",
+                "semantic-ui-react": "^0.88.0",
+                'oidc-client': '^1.11.5'
             },
             aliases={
                 '@js/invenio_owncloud': 'js/invenio_owncloud',

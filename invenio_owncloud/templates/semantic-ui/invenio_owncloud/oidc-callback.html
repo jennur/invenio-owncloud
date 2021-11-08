@@ -1,0 +1,17 @@
+{%- extends config.OWNCLOUD_BASE_TEMPLATE %}
+
+{% block head %}
+{{ super() }}
+<script src="/static/oidc-client.min.js"></script>
+{% endblock %}
+
+{% block page_body %}
+<script>
+  Oidc.Log.logger = console;
+  Oidc.Log.level = Oidc.Log.INFO;
+
+  new Oidc.UserManager().signinPopupCallback();
+</script>
+{% endblock %}
+
+
