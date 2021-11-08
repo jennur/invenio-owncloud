@@ -27,12 +27,6 @@ class InvenioOwnCloud(object):
 
     def init_config(self, app):
         """Initialize configuration."""
-        # Use theme's base template if theme is installed
-        if 'BASE_TEMPLATE' in app.config:
-            app.config.setdefault(
-                'OWNCLOUD_BASE_TEMPLATE',
-                app.config['BASE_TEMPLATE'],
-            )
         for k in dir(config):
             if k.startswith('OWNCLOUD_'):
                 app.config.setdefault(k, getattr(config, k))

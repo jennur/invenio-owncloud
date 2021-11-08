@@ -8,8 +8,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    {% block head %}
+    <script src="https://unpkg.com/vue"></script>
+    {%- endblock head %}
+
+    {%- block css %}
+    {{ webpack['theme.css']}}
+    {%- endblock css %}
   </head>
   <body>
     {%- block page_body %}{%- endblock page_body %}
+
+    {%- block javascript %}{%- endblock javascript %}
   </body>
 </html>
